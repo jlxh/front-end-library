@@ -1,6 +1,6 @@
 /*
     reuse
-    嘉禄前端
+    嘉禄前端 
  */
 
 // 状态代码
@@ -15,7 +15,6 @@ function showSuccessTip(tip, time){
     var time = arguments[1] || 3;
     var background = '#5cb85c';
     var bordercolor = '#4cae4c';
-
     showTip(tip, time, background, bordercolor);
 }
 
@@ -71,7 +70,7 @@ function ajax(url, data) {
         success: function(data) {
             if (STATUSCODE['success'] == data['code']){
                 showSuccessTip(data['message']);
-                result = data;
+                result = {'message': data['message'], 'data': data['data']};
             }else{
                 console.log('Error message:未知错误!');
                 showFailTip(data['message']);
@@ -105,9 +104,6 @@ function ajaxPostFile(url, data) {
              if (STATUSCODE['success'] == data['code']){
                 showSuccessTip(data['message']);
                 result = {'message': data['message'], 'data': data['data']};
-
-                //若数据是加密过的，则需要用以下函数解密
-                //result = {'message': data['message'], 'data': ajaxResponseDecode(data['data'])};
             }else{
                 console.log('Error message:未知错误!');
                 showFailTip(data['message']);
@@ -119,8 +115,3 @@ function ajaxPostFile(url, data) {
     });
     return result;
 } 
-
-// 解密
-function ajaxResponseDecode(data) {
-    return $.parseJSON($.base64.decode(data, 'UTF-8'));
-}

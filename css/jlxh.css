@@ -1,0 +1,66 @@
+/* css reset */
+ @charset 'utf-8';
+ * {
+    margin: 0px;  
+    padding: 0px; 
+}
+ul, ol, li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+} 
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+fieldset , img{
+    border: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+caption ,th {
+    text-align:left;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+q:before, q:after {
+    content:'';
+}
+
+
+
+/* 防止打印页面时a标签的超链接内容显示在页面上 */
+@media print {
+a[href]:after {
+    content: none !important;
+  }
+}
+
+/* 防止不同块儿之间相互影响 */
+.clearfix {
+    overflow: auto;
+    _height: 1%;
+}
+
+
+
+
+
+/* 自定义一些常用的样式 */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.cp {
+    cursor: pointer;
+}
+.di {
+    display: inline-block;
+}
