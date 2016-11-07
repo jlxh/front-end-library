@@ -2,7 +2,9 @@
  @charset 'utf-8';
  * {
     margin: 0px;  
-    padding: 0px; 
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
 }
 ul, ol, li {
     list-style: none;
@@ -10,12 +12,13 @@ ul, ol, li {
 a {
     text-decoration: none;
 } 
-table{
+table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-fieldset , img{
+fieldset , img {
     border: 0;
+    display: block;
 }
 address, caption, cite, code, dfn, em, strong, th, var {
     font-style: normal;
@@ -47,11 +50,15 @@ a[href]:after {
     _height: 1%;
 }
 
+/* 超出部分用神略号表示 */
+.ellipsis{
+    overflow: hidden; 
+    white-space: nowrap;   
+    text-overflow: ellipsis;
+}
 
 
-
-
-/* 自定义一些常用的样式 */
+/* 自定义一些常用的样式(首字母做名字) */
 .fl {
     float: left;
 }
@@ -61,6 +68,12 @@ a[href]:after {
 .cp {
     cursor: pointer;
 }
+.cn {
+    cursor: not-allowed;
+}
 .di {
     display: inline-block;
+}
+.tc{
+    text-align: center;
 }
